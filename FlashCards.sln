@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCards", "Assembly-CSharp.csproj", "{A2229F9A-BB5F-B243-E490-9EE9C2C531A0}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCards", "FlashCards.csproj", "{BA2D76EF-E33A-63F9-F770-63B01F44F217}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A2229F9A-BB5F-B243-E490-9EE9C2C531A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2229F9A-BB5F-B243-E490-9EE9C2C531A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2229F9A-BB5F-B243-E490-9EE9C2C531A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2229F9A-BB5F-B243-E490-9EE9C2C531A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA2D76EF-E33A-63F9-F770-63B01F44F217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA2D76EF-E33A-63F9-F770-63B01F44F217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA2D76EF-E33A-63F9-F770-63B01F44F217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA2D76EF-E33A-63F9-F770-63B01F44F217}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
