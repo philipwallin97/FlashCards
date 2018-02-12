@@ -44,6 +44,18 @@ public class Kategorier : MonoBehaviour {
         }
 	}
 
+    public void openAddKat()
+    {
+        categoryName.gameObject.SetActive(true);
+    }
+
+    public void closeAddKat()
+    {
+        categoryName.gameObject.SetActive(false);
+    }
+
+  
+
     public void addKat()
     {
         Debug.Log(kats.Length);
@@ -51,8 +63,9 @@ public class Kategorier : MonoBehaviour {
         {
             if(kats[i] == false)
             {
+                categoryName.gameObject.SetActive(false);
                 kats[i] = true;
-                anim.Play("PutSide");
+                anim.Play("CreateView");
                 Debug.Log("Added kategori to slot : " + i);
                 i = 10;
             }
@@ -86,7 +99,7 @@ public class Kategorier : MonoBehaviour {
             if (katTitle[i].text == "")
             {
                 katObject[i].SetActive(true);
-                katTitle[i].text = input.text;
+                katTitle[i].text = categoryName.text;
                 i = 10;
                 // Declare new folder and adding it to data
                 if (!string.IsNullOrEmpty(categoryName.text))
@@ -96,11 +109,11 @@ public class Kategorier : MonoBehaviour {
                     SaveData();
                 }
 
-                Card card = new Card("asdasd", "asdasd");
+                Card card = new Card(cardFront.text, cardBack.text);
                 AddCardToFolder(categoryName.text, card);
             }
         }
-        anim.Play("InvertSide");
+        anim.Play("CreateToMain");
         Debug.Log("Going to mainmenu");
     }
 
@@ -111,7 +124,7 @@ public class Kategorier : MonoBehaviour {
 
     public void revertGame()
     {
-        anim.Play("RevertGame");
+        anim.Play("GameToMain");
     }
 
     public void showSettings()
