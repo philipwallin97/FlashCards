@@ -104,10 +104,27 @@ public class Kategorier : MonoBehaviour {
                 // Declare new folder and adding it to data
                 if (!string.IsNullOrEmpty(categoryName.text))
                 {
-                    Folder folder = new Folder(categoryName.text);
-                    data.Folders.Add(folder);
-                    SaveData();
+                    if (data.Folders.Count <= 5)
+                    {
+                        Folder folder = new Folder(categoryName.text);
+                        data.Folders.Add(folder);
+                        SaveData();
+                    }
+                    else
+                    {
+                        // Display message that you have reached the limit
+                    }
+                    
                 }
+
+                /*
+                  
+                    // How to use remove card
+                 Card card = new Card("Front", "Back");
+                 RemoveCardFromFolder(card, FindFolderWithName("FolderName"));
+                 
+                 */
+
 
                 Card card = new Card(cardFront.text, cardBack.text);
                 AddCardToFolder(categoryName.text, card);
@@ -242,6 +259,7 @@ public class Kategorier : MonoBehaviour {
                 return data.Folders[i];
             }
         }
+        Debug.Log("Coun't find folder with name " + folderName);
         return null;
     }
 
@@ -255,6 +273,31 @@ public class Kategorier : MonoBehaviour {
         else
         {
             Debug.Log("Couln't save card to folder");
+        }
+    }
+
+    public void RemoveCardFromFolder(Card card, Folder folder)
+    {
+        if (folder.Cards.Contains(card))
+        {
+            folder.Cards.Remove(card);
+            SaveData();
+        }
+        else
+        {
+            Debug.Log("Trying to delete a card from a folder where the card doesn't exists");
+        }
+    }
+
+    public void RemoveFolder(Folder folder)
+    {
+        if (data.Folders.Contains(folder))
+        {
+            data.Folders.Remove(folder);
+        }
+        else
+        {
+            Debug.Log("Trying to delete a folder that doesn't exists");
         }
     }
 }
