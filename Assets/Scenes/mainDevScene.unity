@@ -2083,7 +2083,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 605314320}
+  categoryName: {fileID: 54176344}
+  cardFront: {fileID: 0}
+  cardBack: {fileID: 0}
   input: {fileID: 54176344}
+  text: {fileID: 0}
   katTitle:
   - {fileID: 185902692}
   - {fileID: 1678641018}
@@ -2098,6 +2102,9 @@ MonoBehaviour:
   - {fileID: 42853397}
   deleteButtons:
   - {fileID: 0}
+  data:
+    Folders: []
+    Results: []
 --- !u!111 &605314320
 Animation:
   m_ObjectHideFlags: 0
