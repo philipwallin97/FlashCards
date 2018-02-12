@@ -127,6 +127,11 @@ public class Kategorier : MonoBehaviour {
         anim.Play("GameToMain");
     }
 
+    public void addQuestion()
+    {
+
+    }
+
     public void showSettings()
     {
         if (!settingsOnOff)
