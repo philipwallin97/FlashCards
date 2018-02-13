@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System;
+using UnityEngine.EventSystems;
 
 public class Kategorier : MonoBehaviour {
     bool[] kats = { false, false, false, false, false };
@@ -15,6 +16,7 @@ public class Kategorier : MonoBehaviour {
     public Text text;
     int currentScene;
     public  Text[] katTitle = new Text[5];
+    public Text categoryText;
     public GameObject[] katObject = new GameObject[5];
     private bool settingsOnOff = false;
     public Button[] deleteButtons = new Button[1];
@@ -22,7 +24,10 @@ public class Kategorier : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+       
+        startData();
         LoadData();
+        startData();
         anim = GetComponent<Animation>();
 	}
 	
@@ -126,8 +131,7 @@ public class Kategorier : MonoBehaviour {
                  */
 
 
-                Card card = new Card(cardFront.text, cardBack.text);
-                AddCardToFolder(categoryName.text, card);
+
             }
         }
         anim.Play("CreateToMain");
@@ -137,6 +141,8 @@ public class Kategorier : MonoBehaviour {
     public void startGame()
     {
         anim.Play("GameView");
+        
+        //categoryText.text = 
     }
 
     public void revertGame()
@@ -146,7 +152,20 @@ public class Kategorier : MonoBehaviour {
 
     public void addQuestion()
     {
+        Card card = new Card(cardFront.text, cardBack.text);
+        AddCardToFolder(categoryName.text, card);
+    }
 
+    public void startData()
+    {
+        for (int i = 0; i < data.Folders.Count; i++)
+        {
+            katObject[i].SetActive(true);
+            kats[i] = true;
+            katTitle[i].text = data.Folders[i].Name;
+            Debug.Log("Added kategori to slot : " + i);
+
+        }
     }
 
     public void showSettings()
